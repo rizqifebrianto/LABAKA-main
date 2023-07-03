@@ -85,7 +85,7 @@
         <div class="row">
             <div class="col-md-7">
                 <h2>Tentang Laboratorium Biologi</h2>
-                <p>Laboratorium Biologi SMA S AL-KAUTSAR merupakan salah satu sarana yang berfungsi sebagai alat pendukung aktivitas siswa dalam proses belajar mengajar, melakukan penelitian dan pengamatan, serta dapat meningkatkan keterampilan siswa.  </p>
+                <p>Laboratorium biologi SMA S Al-Kautsar merupakan salah satu fasilitas yang digunakan untuk melakukan kegiatan praktikum dan eksperimen dalam mata pelajaran biologi di tingkat Sekolah Menengah Atas (SMA). Laboratorium ini dirancang khusus untuk memfasilitasi pembelajaran dan penelitian di bidang biologi </p>
                 </div>
                 <div class="col-md-5">
                     <img src="<?php echo base_url().''?>" class="img-fluid" alt="#">
