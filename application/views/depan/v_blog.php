@@ -67,7 +67,10 @@
                                 <a class="nav-link" href="<?php echo site_url('blog');?>">Alat</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
+                                    <a class="nav-link" href="<?php echo site_url('guru');?>">Tendik</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('download');?>">Modul</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
@@ -116,7 +119,7 @@
 <!--//END BLOG -->
 <!--============================= FOOTER =============================-->
 <footer>
-    <div class="container">
+   <div class="container">
         <div class="row">
             <div class="col-md-3">
                 <div class="foot-logo">
@@ -128,11 +131,11 @@
                 </div>
                 <div class="col-md-3 ml-auto">
                     <div class="sitemap">
-                        <h3>Menu Utama</h3>
+                        <h3>Menu</h3>
                         <ul>
                             <li><a href="<?php echo site_url();?>">Home</a></li>
-                            <li><a href="<?php echo site_url('guru');?>">Alat</a></li>
-                            <li><a href="<?php echo site_url('about');?>">About </a></li>
+                            <li><a href="<?php echo site_url('blog');?>">Alat</a></li>
+                            <li><a href="<?php echo site_url('download');?>">Modul </a></li>
                         </ul>
                     </div>
                 </div>

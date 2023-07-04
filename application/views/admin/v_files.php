@@ -10,7 +10,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>MTs Tarbiyatul Falah | Data Pengguna</title>
+  <title>MTs Tarbiyatul Falah | Download</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="shorcut icon" type="text/css" href="<?php echo base_url().'assets/images/favicon.png'?>">
@@ -20,8 +20,13 @@
   <link rel="stylesheet" href="<?php echo base_url().'assets/font-awesome/css/font-awesome.min.css'?>">
   <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo base_url().'assets/plugins/datatables/dataTables.bootstrap.css'?>">
+  <link rel="stylesheet" href="<?php echo base_url().'assets/plugins/daterangepicker/daterangepicker.css'?>">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url().'assets/dist/css/AdminLTE.min.css'?>">
+  <link rel="stylesheet" href="<?php echo base_url().'assets/plugins/daterangepicker/daterangepicker.css'?>">
+  <link rel="stylesheet" href="<?php echo base_url().'assets/plugins/timepicker/bootstrap-timepicker.min.css'?>">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="<?php echo base_url().'assets/plugins/datepicker/datepicker3.css'?>">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url().'assets/dist/css/skins/_all-skins.min.css'?>">
@@ -43,7 +48,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">Menu Utama</li>
-        <li class="active">
+        <li>
           <a href="<?php echo base_url().'admin/dashboard'?>">
             <i class="fa fa-home"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -81,7 +86,7 @@
             </span>
           </a>
         </li>
-        <li>
+        <li class="active">
           <a href="<?php echo base_url().'admin/files'?>">
             <i class="fa fa-download"></i> <span>Modul</span>
             <span class="pull-right-container">
@@ -97,7 +102,6 @@
             </span>
           </a>
         </li>
-
         <li>
           <a href="<?php echo base_url().'admin/komentar'?>">
             <i class="fa fa-comments"></i> <span>Komentar</span>
@@ -127,13 +131,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Pengguna
+        Download
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Pengguna</a></li>
-        <li class="active">Data Pengguna</li>
+        <li class="active">Download</li>
       </ol>
     </section>
 
@@ -145,55 +148,43 @@
 
           <div class="box">
             <div class="box-header">
-              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-user-plus"></span> Tambah Pengguna</a>
+              <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Add File</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-striped" style="font-size:13px;">
+              <table id="example1" class="table table-striped" style="font-size:12px;">
                 <thead>
                 <tr>
-					<th>Photo</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Jenis Kelamin</th>
-                    <th>Password</th>
-                    <th>Kontak</th>
-                    <th>Level</th>
-                    <th style="text-align:center;">Aksi</th>
+					          <th style="width:70px;">#</th>
+                    <th>File</th>
+                    <th>Tanggal Post</th>
+                    <th>Oleh</th>
+                    <th>Download</th>
+                    <th style="text-align:right;">Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
-				<?php foreach ($data->result_array() as $i) :
-                       $pengguna_id=$i['pengguna_id'];
-                       $pengguna_nama=$i['pengguna_nama'];
-                       $pengguna_jenkel=$i['pengguna_jenkel'];
-                       $pengguna_email=$i['pengguna_email'];
-                       $pengguna_username=$i['pengguna_username'];
-                       $pengguna_password=$i['pengguna_password'];
-                       $pengguna_nohp=$i['pengguna_nohp'];
-                       $pengguna_level=$i['pengguna_level'];
-                       $pengguna_photo=$i['pengguna_photo'];
+				<?php
+					$no=0;
+  					foreach ($data->result_array() as $i) :
+  					   $no++;
+                       $id=$i['file_id'];
+                       $judul=$i['file_judul'];
+                       $deskripsi=$i['file_deskripsi'];
+                       $oleh=$i['file_oleh'];
+                       $tanggal=$i['tanggal'];
+                       $download=$i['file_download'];
+                       $file=$i['file_data'];
                     ?>
                 <tr>
-                  <td><img width="40" height="40" class="img-circle" src="<?php echo base_url().'assets/images/'.$pengguna_photo;?>"></td>
-                  <td><?php echo $pengguna_nama;?></td>
-                  <td><?php echo $pengguna_email;?></td>
-                  <?php if($pengguna_jenkel=='L'):?>
-                        <td>Laki-Laki</td>
-                  <?php else:?>
-                        <td>Perempuan</td>
-                  <?php endif;?>
-                  <td><?php echo $pengguna_password;?></td>
-                  <td><?php echo $pengguna_nohp;?></td>
-                  <?php if($pengguna_level=='1'):?>
-                        <td>Administrator</td>
-                  <?php else:?>
-                        <td>Author</td>
-                  <?php endif;?>
+                  <td><?php echo $no;?></td>
+                  <td><a href="<?php echo base_url().'admin/files/download/'.$id;?>"><?php echo $judul;?></a></td>
+                  <td><?php echo $tanggal;?></td>
+                  <td><?php echo $oleh;?></td>
+                  <td><?php echo $download;?></td>
                   <td style="text-align:right;">
-                        <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $pengguna_id;?>"><span class="fa fa-pencil"></span></a>
-                        <a class="btn" href="<?php echo base_url().'admin/pengguna/reset_password/'.$pengguna_id;?>"><span class="fa fa-refresh"></span></a>
-                        <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $pengguna_id;?>"><span class="fa fa-trash"></span></a>
+                        <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $id;?>"><span class="fa fa-pencil"></span></a>
+                        <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $id;?>"><span class="fa fa-trash"></span></a>
                   </td>
                 </tr>
 				<?php endforeach;?>
@@ -215,7 +206,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; 2023 <a href="#">SMA S Al Kautsar</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2017 <a href="#">MTs Tarbiyatul Falah</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->
@@ -420,76 +411,36 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Tambah Pengguna</h4>
+                        <h4 class="modal-title" id="myModalLabel">Add File</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/pengguna/simpan_pengguna'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/files/simpan_file'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Nama</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xnama" class="form-control" id="inputUserName" placeholder="Nama Lengkap" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
-                                        <div class="col-sm-7">
-                                            <input type="email" name="xemail" class="form-control" id="inputEmail3" placeholder="Email" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Jenis Kelamin</label>
-                                        <div class="col-sm-7">
-                                           <div class="radio radio-info radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="L" name="xjenkel" checked>
-                                                <label for="inlineRadio1"> Laki-Laki </label>
-                                            </div>
-                                            <div class="radio radio-info radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="P" name="xjenkel">
-                                                <label for="inlineRadio2"> Perempuan </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Username</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xusername" class="form-control" id="inputUserName" placeholder="Username" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
-                                        <div class="col-sm-7">
-                                            <input type="password" name="xpassword" class="form-control" id="inputPassword3" placeholder="Password" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword4" class="col-sm-4 control-label">Ulangi Password</label>
-                                        <div class="col-sm-7">
-                                            <input type="password" name="xpassword2" class="form-control" id="inputPassword4" placeholder="Ulangi Password" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kontak Person</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xkontak" class="form-control" id="inputUserName" placeholder="Kontak Person" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Level</label>
-                                        <div class="col-sm-7">
-                                            <select class="form-control" name="xlevel" required>
-                                                <option value="1">Administrator</option>
-                                                <option value="2">Author</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
-                                        <div class="col-sm-7">
-                                            <input type="file" name="filefoto" required/>
-                                        </div>
-                                    </div>
-
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Judul</label>
+                                <div class="col-sm-7">
+                                  <input type="text" name="xjudul" class="form-control" id="inputUserName" placeholder="Judul" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Deskripsi</label>
+                                <div class="col-sm-7">
+                                  <textarea class="form-control" rows="3" name="xdeskripsi" placeholder="Deskripsi ..." required></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Oleh</label>
+                                <div class="col-sm-7">
+                                  <input type="text" name="xoleh" class="form-control" id="inputUserName" placeholder="Oleh" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">File</label>
+                                <div class="col-sm-7">
+                                  <input type="file" name="filefoto" required>
+                                  NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 2,7 MB.
+                                </div>
+                            </div>
 
                     </div>
                     <div class="modal-footer">
@@ -503,109 +454,52 @@
 
 
 		<?php foreach ($data->result_array() as $i) :
-              $pengguna_id=$i['pengguna_id'];
-              $pengguna_nama=$i['pengguna_nama'];
-              $pengguna_jenkel=$i['pengguna_jenkel'];
-              $pengguna_email=$i['pengguna_email'];
-              $pengguna_username=$i['pengguna_username'];
-              $pengguna_password=$i['pengguna_password'];
-              $pengguna_nohp=$i['pengguna_nohp'];
-              $pengguna_level=$i['pengguna_level'];
-              $pengguna_photo=$i['pengguna_photo'];
+                $id=$i['file_id'];
+                $judul=$i['file_judul'];
+                $deskripsi=$i['file_deskripsi'];
+                $oleh=$i['file_oleh'];
+                $tanggal=$i['tanggal'];
+                $download=$i['file_download'];
+                $file=$i['file_data'];
             ?>
 	<!--Modal Edit Pengguna-->
-        <div class="modal fade" id="ModalEdit<?php echo $pengguna_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="ModalEdit<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Pengguna</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit File</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/pengguna/update_pengguna'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/files/update_file'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
 
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Nama</label>
-                                        <div class="col-sm-7">
-											<input type="hidden" name="kode" value="<?php echo $pengguna_id;?>"/>
-                                            <input type="text" name="xnama" class="form-control" id="inputUserName" value="<?php echo $pengguna_nama;?>" placeholder="Nama Lengkap" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
-                                        <div class="col-sm-7">
-                                            <input type="email" name="xemail" class="form-control" value="<?php echo $pengguna_email;?>" id="inputEmail3" placeholder="Email" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Jenis Kelamin</label>
-                                        <div class="col-sm-7">
-										<?php if($pengguna_jenkel=='L'):?>
-                                           <div class="radio radio-info radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="L" name="xjenkel" checked>
-                                                <label for="inlineRadio1"> Laki-Laki </label>
-                                            </div>
-                                            <div class="radio radio-info radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="P" name="xjenkel">
-                                                <label for="inlineRadio2"> Perempuan </label>
-                                            </div>
-										<?php else:?>
-											<div class="radio radio-info radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="L" name="xjenkel">
-                                                <label for="inlineRadio1"> Laki-Laki </label>
-                                            </div>
-                                            <div class="radio radio-info radio-inline">
-                                                <input type="radio" id="inlineRadio1" value="P" name="xjenkel" checked>
-                                                <label for="inlineRadio2"> Perempuan </label>
-                                            </div>
-										<?php endif;?>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Username</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xusername" class="form-control" value="<?php echo $pengguna_username;?>" id="inputUserName" placeholder="Username" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
-                                        <div class="col-sm-7">
-                                            <input type="password" name="xpassword" class="form-control" id="inputPassword3" placeholder="Password">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputPassword4" class="col-sm-4 control-label">Ulangi Password</label>
-                                        <div class="col-sm-7">
-                                            <input type="password" name="xpassword2" class="form-control" id="inputPassword4" placeholder="Ulangi Password">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Kontak Person</label>
-                                        <div class="col-sm-7">
-                                            <input type="text" name="xkontak" class="form-control" value="<?php echo $pengguna_nohp;?>" id="inputUserName" placeholder="Kontak Person" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Level</label>
-                                        <div class="col-sm-7">
-                                            <select class="form-control" name="xlevel" required>
-											<?php if($pengguna_level=='1'):?>
-                                                <option value="1" selected>Administrator</option>
-                                                <option value="2">Author</option>
-											<?php else:?>
-												<option value="1">Administrator</option>
-                                                <option value="2" selected>Author</option>
-											<?php endif;?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
-                                        <div class="col-sm-7">
-                                            <input type="file" name="filefoto"/>
-                                        </div>
-                                    </div>
-
+                             <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Judul</label>
+                                <div class="col-sm-7">
+                                  <input type="hidden" name="kode" value="<?php echo $id;?>">
+                                  <input type="hidden" name="file" value="<?php echo $file;?>">
+                                  <input type="text" name="xjudul" class="form-control" value="<?php echo $judul;?>" id="inputUserName" placeholder="Judul" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Deskripsi</label>
+                                <div class="col-sm-7">
+                                  <textarea class="form-control" rows="3" name="xdeskripsi" placeholder="Deskripsi ..." required><?php echo $deskripsi;?></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Oleh</label>
+                                <div class="col-sm-7">
+                                  <input type="text" name="xoleh" class="form-control" value="<?php echo $oleh;?>" id="inputUserName" placeholder="Oleh" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">File</label>
+                                <div class="col-sm-7">
+                                  <input type="file" name="filefoto">
+                                  NB: file harus bertype pdf|doc|docx|ppt|pptx|zip. ukuran maksimal 2,7 MB.
+                                </div>
+                            </div>
 
                     </div>
                     <div class="modal-footer">
@@ -619,28 +513,27 @@
 	<?php endforeach;?>
 
 	<?php foreach ($data->result_array() as $i) :
-              $pengguna_id=$i['pengguna_id'];
-              $pengguna_nama=$i['pengguna_nama'];
-              $pengguna_jenkel=$i['pengguna_jenkel'];
-              $pengguna_email=$i['pengguna_email'];
-              $pengguna_username=$i['pengguna_username'];
-              $pengguna_password=$i['pengguna_password'];
-              $pengguna_nohp=$i['pengguna_nohp'];
-              $pengguna_level=$i['pengguna_level'];
-              $pengguna_photo=$i['pengguna_photo'];
+                $id=$i['file_id'];
+                $judul=$i['file_judul'];
+                $deskripsi=$i['file_deskripsi'];
+                $oleh=$i['file_oleh'];
+                $tanggal=$i['tanggal'];
+                $download=$i['file_download'];
+                $file=$i['file_data'];
             ?>
 	<!--Modal Hapus Pengguna-->
-        <div class="modal fade" id="ModalHapus<?php echo $pengguna_id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="ModalHapus<?php echo $id;?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus Pengguna</h4>
+                        <h4 class="modal-title" id="myModalLabel">Hapus File</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url().'admin/pengguna/hapus_pengguna'?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url().'admin/files/hapus_file'?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-							<input type="hidden" name="kode" value="<?php echo $pengguna_id;?>"/>
-                            <p>Apakah Anda yakin mau menghapus Pengguna <b><?php echo $pengguna_nama;?></b> ?</p>
+							             <input type="hidden" name="kode" value="<?php echo $id;?>"/>
+                           <input type="hidden" name="file" value="<?php echo $file;?>">
+                            <p>Apakah Anda yakin mau menghapus file <b><?php echo $judul;?></b> ?</p>
 
                     </div>
                     <div class="modal-footer">
@@ -653,38 +546,7 @@
         </div>
 	<?php endforeach;?>
 
-	<!--Modal Reset Password-->
-        <div class="modal fade" id="ModalResetPassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Reset Password</h4>
-                    </div>
 
-                    <div class="modal-body">
-
-                            <table>
-                                <tr>
-                                    <th style="width:120px;">Username</th>
-                                    <th>:</th>
-                                    <th><?php echo $this->session->flashdata('uname');?></th>
-                                </tr>
-                                <tr>
-                                    <th style="width:120px;">Password Baru</th>
-                                    <th>:</th>
-                                    <th><?php echo $this->session->flashdata('upass');?></th>
-                                </tr>
-                            </table>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
 
 
 <!-- jQuery 2.2.3 -->
@@ -696,6 +558,9 @@
 <script src="<?php echo base_url().'assets/plugins/datatables/dataTables.bootstrap.min.js'?>"></script>
 <!-- SlimScroll -->
 <script src="<?php echo base_url().'assets/plugins/slimScroll/jquery.slimscroll.min.js'?>"></script>
+<script src="<?php echo base_url().'assets/plugins/datepicker/bootstrap-datepicker.js'?>"></script>
+<script src="<?php echo base_url().'assets/plugins/timepicker/bootstrap-timepicker.min.js'?>"></script>
+<script src="<?php echo base_url().'assets/plugins/daterangepicker/daterangepicker.js'?>"></script>
 <!-- FastClick -->
 <script src="<?php echo base_url().'assets/plugins/fastclick/fastclick.js'?>"></script>
 <!-- AdminLTE App -->
@@ -715,6 +580,27 @@
       "info": true,
       "autoWidth": false
     });
+
+    $('#datepicker').datepicker({
+      autoclose: true,
+      format: 'yyyy-mm-dd'
+    });
+    $('#datepicker2').datepicker({
+      autoclose: true,
+      format: 'yyyy-mm-dd'
+    });
+    $('.datepicker3').datepicker({
+      autoclose: true,
+      format: 'yyyy-mm-dd'
+    });
+    $('.datepicker4').datepicker({
+      autoclose: true,
+      format: 'yyyy-mm-dd'
+    });
+    $(".timepicker").timepicker({
+      showInputs: true
+    });
+
   });
 </script>
 <?php if($this->session->flashdata('msg')=='error'):?>
@@ -729,23 +615,12 @@
                     bgColor: '#FF4859'
                 });
         </script>
-    <?php elseif($this->session->flashdata('msg')=='warning'):?>
-        <script type="text/javascript">
-                $.toast({
-                    heading: 'Warning',
-                    text: "Gambar yang Anda masukan terlalu besar.",
-                    showHideTransition: 'slide',
-                    icon: 'warning',
-                    hideAfter: false,
-                    position: 'bottom-right',
-                    bgColor: '#FFC017'
-                });
-        </script>
+
     <?php elseif($this->session->flashdata('msg')=='success'):?>
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Pengguna Berhasil disimpan ke database.",
+                    text: "File Berhasil disimpan ke database.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
@@ -757,7 +632,7 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Info',
-                    text: "Pengguna berhasil di update",
+                    text: "File berhasil di update",
                     showHideTransition: 'slide',
                     icon: 'info',
                     hideAfter: false,
@@ -769,17 +644,13 @@
         <script type="text/javascript">
                 $.toast({
                     heading: 'Success',
-                    text: "Pengguna Berhasil dihapus.",
+                    text: "File Berhasil dihapus.",
                     showHideTransition: 'slide',
                     icon: 'success',
                     hideAfter: false,
                     position: 'bottom-right',
                     bgColor: '#7EC857'
                 });
-        </script>
-    <?php elseif($this->session->flashdata('msg')=='show-modal'):?>
-        <script type="text/javascript">
-                $('#ModalResetPassword').modal('show');
         </script>
     <?php else:?>
 

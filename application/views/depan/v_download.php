@@ -24,39 +24,27 @@
 </head>
 
 <body>
-    <div style="position:fixed;left:20px;bottom:20px;">
-<a href="https://api.whatsapp.com/send?phone=+6285100257920&text=Halo">
-<button style="background:#32C03C;vertical-align:center;height:36px;border-radius:5px">
-<img src="https://web.whatsapp.com/img/favicon/1x/favicon.png"> Whatsapp Kami</button></a>
-</div>
   <!--============================= HEADER =============================-->
   <div class="header-topbar">
-      <div class="container">
-          <div class="row">
-              <div class="col-xs-6 col-sm-8 col-md-9">
-                  <div class="header-top_address">
-                      <div class="header-top_list">
-                          <span class="icon-phone"></span>085100257920
-                      </div>
-                      <div class="header-top_list">
-                          <span class="icon-envelope-open"></span>info@mtstarfalbantargebang.sch.id
-                      </div>
-                      <div class="header-top_list">
-                          <span class="icon-location-pin"></span>Jl. Raya Siliwangi Km. 10 Gg. Melati Bekasi
-                      </div>
-                  </div>
-                  <div class="header-top_login2">
-                      <a href="<?php echo site_url('contact');?>">Hubungi Kami</a>
-                  </div>
-              </div>
-              <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="header-top_login mr-sm-3">
-                      <a href="<?php echo site_url('contact');?>">Hubungi Kami</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 col-sm-8 col-md-9">
+                    <div class="header-top_address">
+                        <div class="header-top_list">
+                            <span class="icon-phone"></span>0721 781578
+                        </div>
+                        <div class="header-top_list">
+                            <span class="icon-envelope-open"></span>smaalkautsarlampung@gmail.com
+                        </div>
+                        <div class="header-top_list">
+                            <span class="icon-location-pin"></span>Bandar Lampung, Lampung, Indonesia
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
   <div data-toggle="affix" style="border-bottom:solid 1px #f2f2f2;">
       <div class="container nav-menu2">
           <div class="row">
@@ -72,32 +60,18 @@
                                   <a class="nav-link" href="<?php echo site_url('');?>">Home</a>
                               </li>
                               <li class="nav-item">
+                                  <a class="nav-link" href="<?php echo site_url('blog');?>">Alat</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="<?php echo site_url('guru');?>">Tendik</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="<?php echo site_url('download');?>">Modul</a>
+                              </li>
+                              <li class="nav-item">
                                   <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
                               </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('siswa');?>">Siswa</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('blog');?>">Blog</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('pengumuman');?>">Pengumuman</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('agenda');?>">Agenda</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('download');?>">Download</a>
-                              </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="<?php echo site_url('galeri');?>">Gallery</a>
-                              </li>
-                              <li class="nav-item">
-                                <a class="nav-link" href="<?php echo site_url('contact');?>">Contact</a>
-                              </li>
+                              
                         </ul>
                   </div>
                 </nav>
@@ -113,7 +87,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="contact-title">
-                    <h2>Download</h2>
+                    <h2>Modul Praktikum</h2>
                 </div>
             </div>
         </div>
@@ -155,54 +129,42 @@
     <!--============================= FOOTER =============================-->
     <footer>
         <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="foot-logo">
-                        <a href="<?php echo site_url();?>">
-                            <img src="<?php echo base_url().'theme/images/logo-white.png'?>" class="img-fluid" alt="footer_logo">
-                        </a>
-                        <p><?php echo date('Y');?> © copyright by MTs Tarbiyatul Falah</a>. <br>All rights reserved.</p>
-                        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="foot-logo">
+                    <a href="<?php echo site_url();?>">
+                        <img src="<?php echo base_url().'theme/images/logo-white.png'?>" class="img-fluid" alt="footer_logo">
+                    </a>
+                    <p><?php echo date('Y');?> © copyright by <br>SMA Al Kautsar</a>. <br>All rights reserved.</p>
                     </div>
-                    <div class="col-md-3">
-                        <div class="sitemap">
-                            <h3>Menu Utama</h3>
-                            <ul>
-                                <li><a href="<?php echo site_url();?>">Home</a></li>
-                                <li><a href="<?php echo site_url('about');?>">About</a></li>
-                                <li><a href="<?php echo site_url('artikel');?>">Blog </a></li>
-                                <li><a href="<?php echo site_url('galeri');?>">Gallery</a></li>
-                                <li><a href="<?php echo site_url('contact');?>">Contact</a></li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="col-md-3 ml-auto">
+                    <div class="sitemap">
+                        <h3>Menu</h3>
+                        <ul>
+                            <li><a href="<?php echo site_url();?>">Home</a></li>
+                            <li><a href="<?php echo site_url('blog');?>">Alat</a></li>
+                            <li><a href="<?php echo site_url('download');?>">Modul </a></li>
+                        </ul>
                     </div>
-                    <div class="col-md-3">
-                      <div class="sitemap">
-                          <h3>Akademik</h3>
-                          <ul>
-                              <li><a href="<?php echo site_url('guru');?>">Guru</a></li>
-                              <li><a href="<?php echo site_url('siswa');?>">Siswa </a></li>
-                              <li><a href="<?php echo site_url('pengumuman');?>">Pengumuman</a></li>
-                              <li><a href="<?php echo site_url('agenda');?>">Agenda</a></li>
-                              <li><a href="<?php echo site_url('download');?>">Download</a></li>
-                          </ul>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="address">
-                            <h3>Hubungi Kami</h3>
-                            <p><span>Alamat: </span> Jl. Raya Siliwangi Km. 10 Gg. Melati Rt. 03/ Rw.07 Bekasi, Jawa Barat, INA. 17151</p>
-                            <p>Email : info@mtstarfalbantargebang.sch.id
-                                <br> Phone : +628510 025 7920</p>
-                                <ul class="footer-social-icons">
-                                        <li><a href="https://m.facebook.com/mtstarbiyatulfalah.bantargebang"><i class="fa fa-facebook fa-fb" aria-hidden="true"></i></a></li>
-                                        <li><a href="https://www.instagram.com/mtstarbiyatulfalah94/?igshid=1xyoqvuqccosg"><i class="fa fa-instagram fa-in" aria-hidden="true"></i></a></li>
-                                        <li><a href="https://www.youtube.com/channel/UCcEDH5YygxNcE3CXB0covgg"><i class="fa fa-youtube fa-tw" aria-hidden="true"></i></a></li>
+                </div>
+               
+                <div class="col-md-3 ml-auto">
+                    <div class="address">
+                        <h3>SMA S Al Kautsar</h3>
+                        <p>Bandar Lampung, 35144
+                            Lampung, Indonesia
+                        </p>
+                        <p><span>Phone:</span> 0721 781578
+                            <br><span>Email:</span> smaalkautsarlampung@gmail.com</p>
+                            <ul class="footer-social-icons">
+                                        <li><a href="https://www.instagram.com/smaalkautsar/?hl=id"><i class="fa fa-instagram fa-in" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.youtube.com/@smaalkautsarlampung9585/featured"><i class="fa fa-youtube fa-tw" aria-hidden="true"></i></a></li>
                                     </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
             </footer>
             <!--//END FOOTER -->
             <!-- jQuery, Bootstrap JS. -->

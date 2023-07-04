@@ -63,7 +63,10 @@
                                 <a class="nav-link" href="<?php echo site_url('blog');?>">Alat</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
+                                    <a class="nav-link" href="<?php echo site_url('guru');?>">Tendik</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('download');?>">Modul</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
@@ -84,11 +87,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
-                <h2>Tentang Laboratorium Biologi</h2>
-                <p>Laboratorium Biologi SMA S AL-KAUTSAR merupakan salah satu sarana yang berfungsi sebagai alat pendukung aktivitas siswa dalam proses belajar mengajar, melakukan penelitian dan pengamatan, serta dapat meningkatkan keterampilan siswa.  </p>
+                <h2>Tentang Laboratorium Fisika</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </div>
                 <div class="col-md-5">
-                    <img src="<?php echo base_url().''?>" class="img-fluid" alt="#">
+                    <img src="<?php echo base_url().'theme/images/ss.jpg'?>" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
@@ -131,7 +134,7 @@
                     <img src="<?php echo base_url().'theme/images/chart-icon_1.png'?>" class="img-fluid" alt="chart_icon">
                 </div>
                 <div class="chart-text">
-                    <p><span class="counter"><?php echo $tot_guru;?></span> Guru
+                    <p><span class="counter"><?php echo $tot_guru;?></span> Tendik
                     </p>
                 </div>
             </div>
@@ -164,11 +167,11 @@
                 </div>
                 <div class="col-md-3 ml-auto">
                     <div class="sitemap">
-                        <h3>Menu Utama</h3>
+                        <h3>Menu</h3>
                         <ul>
                             <li><a href="<?php echo site_url();?>">Home</a></li>
-                            <li><a href="<?php echo site_url('guru');?>">Alat</a></li>
-                            <li><a href="<?php echo site_url('about');?>">About </a></li>
+                            <li><a href="<?php echo site_url('blog');?>">Alat</a></li>
+                            <li><a href="<?php echo site_url('download');?>">Modul </a></li>
                         </ul>
                     </div>
                 </div>
