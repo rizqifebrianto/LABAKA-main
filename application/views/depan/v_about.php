@@ -63,7 +63,10 @@
                                 <a class="nav-link" href="<?php echo site_url('blog');?>">Alat</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
+                                    <a class="nav-link" href="<?php echo site_url('guru');?>">Tendik</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('download');?>">Modul</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
@@ -84,11 +87,20 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7">
+<<<<<<< HEAD
+                <h2>Tentang Laboratorium Fisika</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+=======
                 <h2>Tentang Laboratorium Biologi</h2>
+<<<<<<< HEAD
                 <p>Laboratorium biologi SMA S Al-Kautsar merupakan salah satu fasilitas yang digunakan untuk kegiatan praktikum dan eksperimen dalam mata pelajaran biologi di tingkat Sekolah Menengah Atas (SMA). Laboratorium ini dilengkapi dengan petunjuk praktikum yang berisi instruksi, prosedur, dan tujuan dari setiap kegiatan praktikum. Petunjuk praktikum ini membantu siswa memahami konsep dan menjalankan eksperimen dengan benar. Petunjuk praktikum juga mencakup tata cara penggunaan peralatan laboratorium, pengolahan data, dan analisis hasil eksperimen. Serta laboratorium ini sangatlah memperhatikan aspek keselamatan yakni terdapat peraturan dan prosedur yang harus diikuti oleh siswa agar kegiatan di laboratorium berjalan dengan aman</p>
+=======
+                <p>Laboratorium biologi SMA S Al-Kautsar merupakan salah satu fasilitas yang digunakan untuk melakukan kegiatan praktikum dan eksperimen dalam mata pelajaran biologi di tingkat Sekolah Menengah Atas (SMA). Laboratorium ini dirancang khusus untuk memfasilitasi pembelajaran dan penelitian di bidang biologi </p>
+>>>>>>> 04b5632b95304c0adc6c049daeec7b0a6d8cbe86
+>>>>>>> 862ec2522dba81aa25b420c2f9fcff23cd06c3b0
                 </div>
                 <div class="col-md-5">
-                    <img src="<?php echo base_url().''?>" class="img-fluid" alt="#">
+                    <img src="<?php echo base_url().'theme/images/ss.jpg'?>" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
@@ -131,7 +143,7 @@
                     <img src="<?php echo base_url().'theme/images/chart-icon_1.png'?>" class="img-fluid" alt="chart_icon">
                 </div>
                 <div class="chart-text">
-                    <p><span class="counter"><?php echo $tot_guru;?></span> Guru
+                    <p><span class="counter"><?php echo $tot_guru;?></span> Tendik
                     </p>
                 </div>
             </div>
@@ -164,11 +176,11 @@
                 </div>
                 <div class="col-md-3 ml-auto">
                     <div class="sitemap">
-                        <h3>Menu Utama</h3>
+                        <h3>Menu</h3>
                         <ul>
                             <li><a href="<?php echo site_url();?>">Home</a></li>
-                            <li><a href="<?php echo site_url('guru');?>">Alat</a></li>
-                            <li><a href="<?php echo site_url('about');?>">About </a></li>
+                            <li><a href="<?php echo site_url('blog');?>">Alat</a></li>
+                            <li><a href="<?php echo site_url('download');?>">Modul </a></li>
                         </ul>
                     </div>
                 </div>

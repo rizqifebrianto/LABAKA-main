@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorium Biologi - SMA S Al Kautsar</title>
+    <title>Laboratorium Fisika - SMA S Al Kautsar</title>
     <link rel="shorcut icon" href="<?php echo base_url().'theme/images/icon.png'?>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url().'theme/css/bootstrap.min.css'?>">
@@ -68,7 +68,10 @@
                                 <a class="nav-link" href="<?php echo site_url('blog');?>">Alat</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo site_url('guru');?>">Guru</a>
+                                    <a class="nav-link" href="<?php echo site_url('guru');?>">Tendik</a>
+                                </li>
+                            	<li class="nav-item">
+                                    <a class="nav-link" href="<?php echo site_url('download');?>">Modul</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo site_url('about');?>">About</a>
@@ -93,8 +96,8 @@
                     <img class="d-block" src="<?php echo base_url().'theme/images/slider.jpg'?>" alt="First slide">
                     <div class="carousel-caption d-md-block">
                         <div class="slider_title">
-                            <h1>Laboratorium Biologi SMA S Al Kautsar</h1>
-                            <h4>Selamat Datang di Web Laboratorium Biologi SMA Al Kautsar</h4>
+                            <h1>Laboratorium Fisika SMA S Al Kautsar</h1>
+                            <h4>Selamat Datang di Web Laboratorium Fisika SMA Al Kautsar</h4>
                             <div class="slider-btn">
                                 <a href="<?php echo site_url('artikel');?>" class="btn btn-default">Learn more</a>
                             </div>
@@ -143,8 +146,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-15">
-               <h2>Laboratorium Biologi </h2>
-               <p>Laboratorium Biologi adalah ruang khusus yang digunakan untuk melakukan eksperimen dan penelitian dalam bidang Biologi. Lab Biologi biasanya dilengkapi dengan peralatan dan instrumen khusus yang memungkinkan pengukuran dan observasi fenomena Biologi.</p>
+               <h2>Laboratorium Fisika </h2>
+               <p>Laboratorium fisika adalah ruang khusus yang digunakan untuk melakukan eksperimen dan penelitian dalam bidang fisika. Lab fisika biasanya dilengkapi dengan peralatan dan instrumen khusus yang memungkinkan pengukuran dan observasi fenomena fisika.</p>
 
             </div>
         </div>
@@ -191,7 +194,7 @@
                     <img src="<?php echo base_url().'theme/images/chart-icon_1.png'?>" class="img-fluid" alt="chart_icon">
                 </div>
                 <div class="chart-text">
-                    <p><span class="counter"><?php echo $tot_guru;?></span> Guru
+                    <p><span class="counter"><?php echo $tot_guru;?></span> Tendik
                     </p>
                 </div>
             </div>
@@ -238,7 +241,7 @@
 <!--//END OUR TEACHER -->
 <!--============================= FOOTER =============================-->
 <footer>
-    <div class="container">
+     <div class="container">
         <div class="row">
             <div class="col-md-3">
                 <div class="foot-logo">
@@ -250,11 +253,11 @@
                 </div>
                 <div class="col-md-3 ml-auto">
                     <div class="sitemap">
-                        <h3>Menu Utama</h3>
+                        <h3>Menu</h3>
                         <ul>
                             <li><a href="<?php echo site_url();?>">Home</a></li>
-                            <li><a href="<?php echo site_url('guru');?>">Alat</a></li>
-                            <li><a href="<?php echo site_url('about');?>">About </a></li>
+                            <li><a href="<?php echo site_url('blog');?>">Alat</a></li>
+                            <li><a href="<?php echo site_url('download');?>">Modul </a></li>
                         </ul>
                     </div>
                 </div>
